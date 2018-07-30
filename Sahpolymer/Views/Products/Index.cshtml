@@ -1,0 +1,152 @@
+﻿@model IEnumerable<WorkWellPipe.Models.Product>
+@{
+    ViewBag.Title = "Products";
+}
+
+
+<div class="container">
+
+
+
+
+
+
+
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Products</a>
+        </li>
+        <li class="breadcrumb-item active">Products List</li>
+    </ol>
+
+    <div class="card">
+        <div class="card-header">
+
+            <div class="flex-fill">
+                <a href="/Products/Create" class="btn btn-success"> <i class="fa fa-plus"></i> Add Product</a>
+            </div>
+        </div>
+        <br />
+        <div class="card-body">
+            <table id="myTable" class="table table-striped table-bordered dt-responsive">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>
+                            Category
+                        </th>
+                        <th>Created Date</th>
+                        <th>Updated Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+@section scripts{
+    <script>
+
+
+        var _datatable = "";
+
+        $(document).ready(function () {
+            _datatable = $("#myTable").DataTable({
+                "processing": true, // for show progress bar
+                "serverSide": true, // for process server side
+                "filter": true, // this is for disable filter (search box)
+                "orderMulti": false, // for disable multiple column at once
+                "ajax": {
+                    "url": "/Products/LoadData",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columns": [
+
+                    {
+
+                        "data": "ProductName", "name": "ProductName", "autoWidth": true
+                    },
+                    {
+
+                        "data": "ProductDescription", "name": "ProductDescription", "autoWidth": true, "sClass": "moretext"
+                    },
+                    {
+
+                        "data": "Category", "name": "Category", "autoWidth": true
+                    },
+                    {
+
+                        "data": "CreatedDate", "name": "CreatedDate", "autoWidth": true,
+
+                    },
+                    {
+
+                        "data": "UpdatedDate", "name": "UpdatedDate", "autoWidth": true,
+
+                    },
+
+                    {
+                        "orderable": false,
+                        "mRender": function (data, type, row) {
+                            var _c = '<a href="/Products/Edit?id=' + row.Id + '" class="btn btn-primary"  title="" data-original-title="Edit"><i class="fa fa-pencil"  align="center"></i></a>  '
+                            var _d = '<a onclick="DeleteProduct(' + row.Id + ')" href="#"  class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-trash-o"  align="center"></i> </a>  '
+
+                            return _c + _d;
+
+                        }
+                    },
+                ]
+            });
+        });
+
+
+
+
+        function DeleteProduct(Id) {
+
+            var _x = confirm("Are you sure you want to delete this product ?")
+
+            if (_x) {
+
+
+                    $.ajax({
+                        url: "/Products/Delete",
+                        data: JSON.stringify({ id: Id }),
+                        type: 'POST',
+                        contentType: 'application/json',
+                        dataType: 'json',
+                        success: function (result) {
+                            if (result.Success === true) {
+                                _datatable.clear().draw();
+                            } else {
+                                alert("error occurred during operation." + result.ex);
+                            }
+                        },
+                        error: function (req, status, error) {
+                            alert(error);
+                        }
+                    });
+
+
+
+
+
+            }
+
+        }
+
+    </script>
+}
