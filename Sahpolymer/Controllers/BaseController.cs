@@ -41,6 +41,15 @@ namespace SahPolymer.Controllers
                     _BrandImage.CreatedDate = DateTime.Now;
                     _Globalcontext.BrandImages.Add(_BrandImage);
                     break;
+                case 4:
+                    var _AlbumImage = new AlbumImages();
+                    _AlbumImage.AlbumID = ID;
+                    _AlbumImage.ImagePath = ImagePath;
+                    _AlbumImage.UpdatedDate = DateTime.Now;
+                    _AlbumImage.CreatedDate = DateTime.Now;
+                    _Globalcontext.AlbumImages.Add(_AlbumImage);
+                    break;
+
                 default:
                     break;
             }
@@ -65,6 +74,10 @@ namespace SahPolymer.Controllers
                 case 3:
                     var _BrandImage = _Globalcontext.BrandImages.Where(x => x.Id == ID).FirstOrDefault();
                     _Globalcontext.BrandImages.Remove(_BrandImage);
+                    break;
+                case 4:
+                    var _AlbumImage = _Globalcontext.AlbumImages.Where(x => x.Id == ID).FirstOrDefault();
+                    _Globalcontext.AlbumImages.Remove(_AlbumImage);
                     break;
                 default:
                     break;

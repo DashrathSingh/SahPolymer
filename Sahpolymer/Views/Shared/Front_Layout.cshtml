@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title -Sah polymers</title>
+    @*  <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>*@
+    <link href="@Url.Content("~/Front_Content/CSS/settings.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Front_Content/CSS/style-core.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Front_Content/CSS/financity-style-custom.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Front_Content/CSS/style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Front_Content/CSS/page-builder.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CAsap%3Aregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic&#038;subset=latin-ext%2Clatin%2Cvietnamese%2Ccyrillic-ext%2Cgreek%2Cgreek-ext%2Ccyrillic&#038;ver=4.9.5' type='text/css' media='all'>
+    <style>
+
+        .financity-logo-inner {
+            background: #fff;
+            padding: 12px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="home page-template-default page page-id-5514 gdlr-core-body financity-body financity-body-front financity-full  financity-with-sticky-navigation gdlr-core-link-to-lightbox">
+    <div class="financity-mobile-header-wrap">
+        <div class="financity-mobile-header financity-header-background financity-style-slide" id="financity-mobile-header">
+            <div class="financity-mobile-header-container financity-container">
+                <div class="financity-logo  financity-item-pdlr">
+                    <div class="financity-logo-inner">
+                        <a href="index.html">
+                            <img src="http://www.sahpolymers.com/images/logo.png" alt="" width="211" height="48">
+                        </a>
+                    </div>
+                </div>
+                <div class="financity-mobile-menu-right">
+                    <div class="financity-main-menu-search" id="financity-mobile-top-search"><i class="fa fa-search"></i></div>
+                    <div class="financity-top-search-wrap">
+                        <div class="financity-top-search-close"></div>
+                        <div class="financity-top-search-row">
+                            <div class="financity-top-search-cell">
+                                <form role="search" method="get" class="search-form" action="index.html">
+                                    <input type="text" class="search-field financity-title-font" placeholder="Search..." value="" name="s">
+                                    <div class="financity-top-search-submit"><i class="fa fa-search"></i></div>
+                                    <input type="submit" class="search-submit" value="Search">
+                                    <div class="financity-top-search-close"><i class="icon_close"></i></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="financity-main-menu-cart" id="financity-mobile-menu-cart">
+                        <i class="fa fa-shopping-cart"></i><span class="financity-top-cart-count">0</span>
+                        <div class="financity-top-cart-hover-area"></div>
+                        <div class="financity-top-cart-content-wrap">
+                            <div class="financity-top-cart-content">
+                                <div class="financity-top-cart-count-wrap"><span class="head">Items :  </span><span class="financity-top-cart-count">0</span></div>
+                                <div class="financity-top-cart-amount-wrap">
+                                    <span class="head">Subtotal : </span><span class="financity-top-cart-amount">
+                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>0.00</span>
+                                    </span>
+                                </div>
+                                <a class="financity-top-cart-button" href="#">View Cart</a>
+                                <a class="financity-top-cart-checkout-button" href="#">Check Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="financity-mobile-menu">
+                        <a class="financity-mm-menu-button financity-mobile-menu-button financity-mobile-button-hamburger" href="#financity-mobile-menu"><span></span></a>
+                        <div class="financity-mm-menu-wrap financity-navigation-font" id="financity-mobile-menu" data-slide="right">
+                            <ul id="menu-main-navigation" class="m-menu">
+                                <li class="menu-item menu-item-home current-menu-item page_item page-item-2039 current_page_item"><a href="/">Home</a></li>
+                                <li class="menu-item">
+                                    <a href="/">Pages</a>
+
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="services.html">Our Services</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="capital-markets.html">Capital Markets</a></li>
+                                        <li class="menu-item"><a href="insurance.html">Insurance</a></li>
+                                        <li class="menu-item"><a href="blockchain.html">Blockchain</a></li>
+                                        <li class="menu-item"><a href="technology-advisory.html">Technology Advisory</a></li>
+                                        <li class="menu-item"><a href="finance-risk.html">Finance &#038; Risk</a></li>
+                                        <li class="menu-item"><a href="portfolio-management.html">Portfolio Management</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="portfolio-3-columns.html">Our Cases</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-has-children">
+                                            <a>Portfolio Grid</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="portfolio-2-columns.html">Portfolio 2 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-3-columns.html">Portfolio 3 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-4-columns.html">Portfolio 4 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-2-columns-with-frame.html">Portfolio 2 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="portfolio-3-columns-with-frame.html">Portfolio 3 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="portfolio-4-columns-with-frame.html">Portfolio 4 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="portfolio-2-columns-no-space.html">Portfolio 2 Columns No Space</a></li>
+                                                <li class="menu-item"><a href="portfolio-3-columns-no-space.html">Portfolio 3 Columns No Space</a></li>
+                                                <li class="menu-item"><a href="portfolio-4-columns-no-space.html">Portfolio 4 Columns No Space</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a>Portfolio Modern</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="portfolio-modern-2-columns.html">Modern 2 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-modern-3-columns.html">Modern 3 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-modern-4-columns.html">Modern 4 Columns</a></li>
+                                                <li class="menu-item"><a href="portfolio-modern-2-columns-no-space.html">Modern 2 Columns No Space</a></li>
+                                                <li class="menu-item"><a href="portfolio-modern-3-columns-no-space.html">Modern 3 Columns No Space</a></li>
+                                                <li class="menu-item"><a href="portfolio-modern-4-columns-no-space.html">Modern 4 Columns No Space</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a>Portfolio Side Thumbnail</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="portfolio-left-right-large-thumbnail.html">Portfolio Left &#038; Right Large Thumbnail</a></li>
+                                                <li class="menu-item"><a href="portfolio-left-large-thumbnail.html">Portfolio Left Large Thumbnail</a></li>
+                                                <li class="menu-item"><a href="portfolio-right-large-thumbnail.html">Portfolio Right Large Thumbnail</a></li>
+                                                <li class="menu-item"><a href="portfolio-left-right-small-thumbnail.html">Portfolio Left &#038; Right Small Thumbnail</a></li>
+                                                <li class="menu-item"><a href="portfolio-left-small-thumbnail.html">Portfolio Left Small Thumbnail</a></li>
+                                                <li class="menu-item"><a href="portfolio-right-small-thumbnail.html">Portfolio Right Small Thumbnail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#">Single Case(Portfolio)</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="startup-funding.html">Custom Style 1</a></li>
+                                                <li class="menu-item"><a href="family-asset-management.html">Custom Style 2</a></li>
+                                                <li class="menu-item"><a href="accounting-advisory.html">Custom Style 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Features</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#">Mega 1</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="accordions-toggles.html">Accordions &#038; Toggles</a></li>
+                                                <li class="menu-item"><a href="alert-box.html">Alert Box</a></li>
+                                                <li class="menu-item"><a href="blockquotes.html">Blockquotes</a></li>
+                                                <li class="menu-item"><a href="buttons.html">Buttons</a></li>
+                                                <li class="menu-item"><a href="call-to-action.html">Call To Action</a></li>
+                                                <li class="menu-item"><a href="column-services.html">Column Services</a></li>
+                                                <li class="menu-item"><a href="columns.html">Columns</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#">Mega 2</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="counters.html">Counters</a></li>
+                                                <li class="menu-item"><a href="count-down.html">Count Down</a></li>
+                                                <li class="menu-item"><a href="dividers.html">Dividers</a></li>
+                                                <li class="menu-item"><a href="dropcaps.html">Dropcaps</a></li>
+                                                <li class="menu-item"><a href="featured-boxes.html">Featured Boxes</a></li>
+                                                <li class="menu-item"><a href="flip-boxes.html">Flip Boxes</a></li>
+                                                <li class="menu-item"><a href="icon-list.html">Icon Lists</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#">Mega 3</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="icons.html">Icons</a></li>
+                                                <li class="menu-item"><a href="images.html">Images</a></li>
+                                                <li class="menu-item"><a href="team-plain-style.html">Personnel</a></li>
+                                                <li class="menu-item"><a href="price-table.html">Price Table</a></li>
+                                                <li class="menu-item"><a href="promo-boxes.html">Promo Boxes</a></li>
+                                                <li class="menu-item"><a href="skill-bar.html">Skill Bar</a></li>
+                                                <li class="menu-item"><a href="skill-circle.html">Skill Circle</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#">Mega 4</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="social-shares.html">Social Shares</a></li>
+                                                <li class="menu-item"><a href="stunning-texts.html">Stunning Texts</a></li>
+                                                <li class="menu-item"><a href="tabs-horizontal.html">Tabs Horizontal</a></li>
+                                                <li class="menu-item"><a href="tabs-vertical.html">Tabs Vertical</a></li>
+                                                <li class="menu-item"><a href="testimonial.html">Testimonial</a></li>
+                                                <li class="menu-item"><a href="titles.html">Titles</a></li>
+                                                <li class="menu-item"><a href="typography.html">Typography</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="blog-full-right-sidebar-with-frame.html">Blog</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="blog-grid-3-columns-no-space.html">Blog Grid</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="blog-grid-2-columns.html">Blog Grid 2 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-grid-3-columns.html">Blog Grid 3 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-grid-4-columns.html">Blog Grid 4 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-grid-2-columns-no-space.html">Blog Grid 2 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-grid-3-columns-no-space.html">Blog Grid 3 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-grid-4-columns-no-space.html">Blog Grid 4 Columns</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="blog-3-columns-with-frame.html">Blog Columns</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="blog-2-columns-with-frame.html">Blog 2 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="blog-3-columns-with-frame.html">Blog 3 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="blog-4-columns-with-frame.html">Blog 4 Columns With Frame</a></li>
+                                                <li class="menu-item"><a href="blog-2-columns.html">Blog 2 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-3-columns.html">Blog 3 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-4-columns.html">Blog 4 Columns</a></li>
+                                                <li class="menu-item"><a href="blog-3-columns-with-frame-post-format.html">Blog Columns With Post Format</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="blog-full-right-sidebar-with-frame.html">Blog Full</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="blog-full-right-sidebar-with-frame.html">Blog Full Right Sidebar</a></li>
+                                                <li class="menu-item"><a href="blog-full-left-sidebar-with-frame.html">Blog Full Left Sidebar</a></li>
+                                                <li class="menu-item"><a href="blog-full-both-sidebar-with-frame.html">Blog Full Both Sidebar With Frame</a></li>
+                                                <li class="menu-item"><a href="blog-full-right-sidebar.html">Blog Full Right Sidebar</a></li>
+                                                <li class="menu-item"><a href="blog-full-left-sidebar.html">Blog Full Left Sidebar</a></li>
+                                                <li class="menu-item"><a href="blog-full-both-sidebar.html">Blog Full Both Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item" data-size="60"><a href="standard-post-type.html" class="sf-with-ul-pre">Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="shop.html">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="shop.html">Shop</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="financity-body-outer-wrapper ">
+        <div class="financity-body-wrapper clearfix  financity-with-transparent-header financity-with-frame">
+            <div class="financity-header-background-transparent">
+                <div class="financity-top-bar">
+                    <div class="financity-top-bar-background"></div>
+                    <div class="financity-top-bar-container clearfix financity-container ">
+                        <div class="financity-top-bar-left financity-item-pdlr">
+                            <span class="gdlr-core-dropdown-tab gdlr-core-js clearfix">
+                                <span class="gdlr-core-dropdown-tab-title">
+                                    <span class="gdlr-core-head">SAH POLYMERS</span>
+                                </span><span class="financity-top-bar-divider financity-right-margin"></span><span class="gdlr-core-dropdown-tab-content-wrap">
+                                    <span class="gdlr-core-dropdown-tab-content gdlr-core-active" data-index="0">
+                                        <i class="fa fa-clock-o" id="i_131c_0"></i><strong>Mon - Fri 10:00-18:00</strong> <i class="fa fa-phone" id="i_131c_1"></i><strong>
+                                            +91 294 2490534
+
+                                        </strong>
+                                    </span><span class="gdlr-core-dropdown-tab-content " data-index="1"><i class="fa fa-clock-o" id="i_131c_2"></i><strong>Mon - Fri 10:00-18:00 </strong><i class="fa fa-phone" id="i_131c_3"></i><strong>+34-354-5468-8</strong> </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="financity-top-bar-right financity-item-pdlr">
+                            <div class="financity-top-bar-right-text">
+                                <i class="fa fa-envelope-open-o" id="i_131c_4"></i><strong>
+                                    Email - info@sahpolymers.com
+                                </strong>
+                            </div>
+                            <span class="financity-top-bar-divider financity-left-margin"></span>
+                            <div class="financity-top-bar-right-social">
+                                <a href="https://www.facebook.com/Sah-Polymers-Limited-226809844110439/" target="_blank" class="financity-top-bar-social-icon" title="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="pinterest"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="https://twitter.com/SAHPolymers" target="_blank" class="financity-top-bar-social-icon" title="twitter"><i class="fa fa-twitter"></i></a><a href="#" target="_blank" class="financity-top-bar-social-icon" title="instagram"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <header class="financity-header-wrap financity-header-style-plain  financity-style-menu-right financity-sticky-navigation financity-style-slide" data-navigation-offset="75px">
+                    <div class="financity-header-background"></div>
+                    <div class="financity-header-container  financity-container">
+                        <div class="financity-header-container-inner clearfix">
+                            <div class="financity-logo  financity-item-pdlr">
+                                <div class="financity-logo-inner">
+                                    <a href="/">
+                                        <img src="http://www.sahpolymers.com/images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="financity-navigation financity-item-pdlr clearfix ">
+                                <div class="financity-main-menu" id="financity-main-menu">
+                                    <ul id="menu-main-navigation-1" class="sf-menu">
+                                        <li class="menu-item menu-item-home current-menu-item page_item page-item-2039  financity-normal-menu"><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="/Home/ContentPages?pageCode=ABOUT" class="sf-with-ul-pre">About Us</a>
+
+                                        </li>
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="/Home/ContentPages?pageCode=CUSTOMERS" class="sf-with-ul-pre">Customers</a>
+
+                                        </li>
+                                      
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="#" class="sf-with-ul-pre sf-with-ul">Products</a>
+                                            <ul class="sub-menu" style="display: none;">
+                                                @foreach (var item in ViewBag.ProductsList)
+                                                {
+
+                                                <li class="menu-item" data-size="60"><a href="/Home/ProductDetail?ID=@item.Id">@item.ProductName</a></li>
+                                                }
+
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children financity-mega-menu">
+                                            <a href="/Home/Petrochemical" class="sf-with-ul-pre">Petrochemicals</a>
+
+                                        </li>
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="/Home/InfraStructures" class="sf-with-ul-pre">Infastructures</a>
+
+                                        </li>
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="/Home/ContentPages?pageCode=CAREERS" class="sf-with-ul-pre">Careers</a>
+
+                                        </li>
+                                        <li class="menu-item menu-item-has-children financity-normal-menu">
+                                            <a href="/Home/ContentPages?pageCode=TEAM" class="sf-with-ul-pre">Team Sah</a>
+
+                                        </li>
+
+
+
+                                    </ul>
+                                    <div class="financity-navigation-slide-bar" id="financity-navigation-slide-bar"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="financity-page-wrapper" id="financity-page-wrapper">
+                <div class="gdlr-core-page-builder-body">
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 58px 0px 0px 0px;" id="gdlr-core-wrapper-1">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #172852;"></div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 0px;">
+                                        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin: 0px auto; background: transparent; padding: 0px; margin-top: 0px; margin-bottom: 0px;">
+                                            <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display: none;" data-version="5.4.1">
+                                                <ul>
+                                                    @foreach (var item in ViewBag.SliderImages)
+                                                    {
+
+                                                        <li data-index="rs-@item.Id" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://www.sahpolymers.com/images/1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                                                            <img src="@Url.Content(item.ImagePath)" alt="" title="Homepage 2" data-bgposition="center top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="110" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+                                                            <div class="tp-caption   tp-resizeme" id="slide-2-layer-1" data-x="28" data-y="center" data-voffset="-20" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 128px; font-weight: 700; color: #ffffff; letter-spacing: 0px; font-family: Montserrat;">@item.Title</div>
+                                                            <div class="tp-caption   tp-resizeme" id="slide-2-layer-2" data-x="38" data-y="center" data-voffset="107" data-width="['724']" data-height="['65']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":280,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; min-width: 724px; max-width: 724px; max-width: 65px; max-width: 65px; white-space: normal; font-size: 20px; line-height: 32px; font-weight: 400; color: #ffffff; letter-spacing: 0px; font-family: Open Sans;">@item.SliderDescription</div>
+                                                            <a href="@Url.Action("Contact", "Home")" class="tp-caption rev-btn " id="slide-2-layer-4" data-x="36" data-y="center" data-voffset="196" data-width="['auto']" data-height="['auto']" data-type="button" data-responsive_offset="on" data-frames='[{"delay":640,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(55,64,176);bs:solid;bw:0 0 0 0;"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[21,21,21,21]" data-paddingright="[39,39,39,39]" data-paddingbottom="[21,21,21,21]" data-paddingleft="[39,39,39,39]" style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 17px; font-weight: 700; color: #3740b0; letter-spacing: 0.5px; font-family: Asap; background-color: rgb(255,255,255); border-color: rgba(0,0,0,1); border-radius: 30px 30px 30px 30px; outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;">Contact Us</a>
+                                                        </li>
+                                                    }
+
+                                                </ul>
+                                                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" data-skin="Column Service HP 1">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #f5f5f5;">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-size: cover; background-position: center;" data-parallax-speed="0.2"></div>
+                        </div>
+                    </div>
+
+                </div>
+                @RenderBody()
+            </div>
+            <footer>
+
+                <div class="financity-copyright-wrapper">
+                    <div class="financity-copyright-container financity-container clearfix">
+                        <div class="financity-copyright-left financity-item-pdlr">Copyright 2017, All Right Reserved, GoodLayers</div>
+                        <div class="financity-copyright-right financity-item-pdlr"><a href="https://www.facebook.com/Sah-Polymers-Limited-226809844110439/" target="_self"><i class="fa fa-facebook" style="font-size: 16px; color: #ffffff; margin-left: 17px;"></i></a><a href="#" target="_self"><i class="fa fa-twitter" style="font-size: 16px; color: #ffffff; margin-left: 17px;"></i></a><a href="#" target="_self"><i class="fa fa-linkedin" style="font-size: 16px; color: #ffffff; margin-left: 17px;"></i></a><a href="#" target="_self"><i class="fa fa-google-plus" style="font-size: 16px; color: #ffffff; margin-left: 17px;"></i></a><a href="#" target="_self"><i class="fa fa-instagram" style="font-size: 16px; color: #ffffff; margin-left: 17px;"></i></a></div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="@Url.Content("~/Front_Content/JS/jquery.js")"></script>
+    <script src="@Url.Content("~/Front_Content/JS/jquery-migrate.min.js")"></script>
+    <script src="@Url.Content("~/Front_Content/JS/jquery.themepunch.tools.min.js")"></script>
+
+    <script src="@Url.Content("~/Front_Content/JS/jquery.themepunch.revolution.min.js")"></script>
+    <!--[if lt IE 9]> <script type='text/javascript' src='https://demo.goodlayers.com/financity/wp-content/themes/financity/js/html5.js'></script> <![endif]-->
+
+    <script src="@Url.Content("~/Front_Content/JS/effect.min.js")"></script>
+    <script src="@Url.Content("~/Front_Content/JS/script-core.js")"></script>
+    <script src="@Url.Content("~/Front_Content/JS/script.js")"></script>
+    <script src="@Url.Content("~/Front_Content/JS/page-builder.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Front_Content/JS/revolution.extension.slideanims.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Front_Content/JS/revolution.extension.layeranimation.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Front_Content/JS/revolution.extension.kenburn.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Front_Content/JS/revolution.extension.navigation.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Front_Content/JS/revolution.extension.parallax.min.js")"></script>
+    <script>
+        /*<![CDATA[*/
+        var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+        var htmlDivCss = "";
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement("div");
+            htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+            document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+        } /*]]>*/
+    </script>
+    <script>
+        /*<![CDATA[*/
+        var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+        var htmlDivCss = "";
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement("div");
+            htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+            document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+        } /*]]>*/
+    </script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        var setREVStartSize = function () {
+            try {
+                var e = new Object,
+                    i = jQuery(window).width(),
+                    t = 9999,
+                    r = 0,
+                    n = 0,
+                    l = 0,
+                    f = 0,
+                    s = 0,
+                    h = 0;
+                e.c = jQuery('#rev_slider_1_1');
+                e.gridwidth = [1300];
+                e.gridheight = [790];
+                e.sliderLayout = "auto";
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function (e, f) {
+                    f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+                }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c) jQuery.each(c, function (e, i) {
+                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+                    }
+                    f = u
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({
+                    height: f
+                })
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d)
+            }
+        };
+        setREVStartSize();
+        var tpj = jQuery;
+        var revapi1;
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            } else {
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "//demo.goodlayers.com/financity/demo2/wp-content/plugins/revslider/public/assets/js/",
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        arrows: {
+                            style: "uranus",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: true,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 20,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 20,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "uranus",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 30,
+                            space: 10,
+                            tmp: '<span class="tp-bullet-inner"></span>'
+                        }
+                    },
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: 1300,
+                    gridheight: 790,
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "enterpoint",
+                        speed: 400,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*]]>*/
+    </script>
+    <script>
+        /*<![CDATA[*/
+        var htmlDivCss = unescape("%23rev_slider_1_1%20.uranus.tparrows%20%7B%0A%20%20width%3A50px%3B%0A%20%20height%3A50px%3B%0A%20%20background%3Argba%28255%2C255%2C255%2C0%29%3B%0A%20%7D%0A%20%23rev_slider_1_1%20.uranus.tparrows%3Abefore%20%7B%0A%20width%3A50px%3B%0A%20height%3A50px%3B%0A%20line-height%3A50px%3B%0A%20font-size%3A40px%3B%0A%20transition%3Aall%200.3s%3B%0A-webkit-transition%3Aall%200.3s%3B%0A%20%7D%0A%20%0A%20%20%23rev_slider_1_1%20.uranus.tparrows%3Ahover%3Abefore%20%7B%0A%20%20%20%20opacity%3A0.75%3B%0A%20%20%7D%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%7B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20box-shadow%3A%200%200%200%202px%20rgba%28255%2C%20255%2C%20255%2C%200%29%3B%0A%20%20-webkit-transition%3A%20box-shadow%200.3s%20ease%3B%0A%20%20transition%3A%20box-shadow%200.3s%20ease%3B%0A%20%20background%3Atransparent%3B%0A%20%20width%3A15px%3B%0A%20%20height%3A15px%3B%0A%7D%0A%23rev_slider_1_1%20.uranus%20.tp-bullet.selected%2C%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%3Ahover%20%7B%0A%20%20box-shadow%3A%200%200%200%202px%20rgba%28255%2C%20255%2C%20255%2C1%29%3B%0A%20%20border%3Anone%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20background%3Atransparent%3B%0A%7D%0A%0A%23rev_slider_1_1%20.uranus%20.tp-bullet-inner%20%7B%0A%20%20-webkit-transition%3A%20background-color%200.3s%20ease%2C%20-webkit-transform%200.3s%20ease%3B%0A%20%20transition%3A%20background-color%200.3s%20ease%2C%20transform%200.3s%20ease%3B%0A%20%20top%3A%200%3B%0A%20%20left%3A%200%3B%0A%20%20width%3A%20100%25%3B%0A%20%20height%3A%20100%25%3B%0A%20%20outline%3A%20none%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%0A%20%20background-color%3A%20rgba%28255%2C%20255%2C%20255%2C%200.3%29%3B%0A%20%20text-indent%3A%20-999em%3B%0A%20%20cursor%3A%20pointer%3B%0A%20%20position%3A%20absolute%3B%0A%7D%0A%0A%23rev_slider_1_1%20.uranus%20.tp-bullet.selected%20.tp-bullet-inner%2C%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%3Ahover%20.tp-bullet-inner%7B%0A%20transform%3A%20scale%280.4%29%3B%0A%20-webkit-transform%3A%20scale%280.4%29%3B%0A%20background-color%3Argb%28255%2C%20255%2C%20255%29%3B%0A%7D%0A");
+        var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+        if (htmlDiv) {
+            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+        } else {
+            var htmlDiv = document.createElement('div');
+            htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+            document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+        } /*]]>*/
+    </script>
+
+
+</body>
+</html>

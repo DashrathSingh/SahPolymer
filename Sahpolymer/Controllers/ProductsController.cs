@@ -9,10 +9,13 @@ using System.Web;
 using System.Web.Mvc;
 using WorkWellPipe.Models;
 using System.Linq.Dynamic;
+using System.IO;
+using System.Drawing;
+
 namespace SahPolymer.Controllers
 {
     [Authorize]
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -63,6 +66,7 @@ namespace SahPolymer.Controllers
                 product.UpdatedDate = DateTime.Now;
                 db.Products.Add(product);
                 await db.SaveChangesAsync();
+                Session["ProductsList"] = null;
                 return RedirectToAction("Index");
             }
 
@@ -98,6 +102,7 @@ namespace SahPolymer.Controllers
                 product.UpdatedDate = DateTime.Now;
                 db.Entry(product).State = EntityState.Modified;
                 await db.SaveChangesAsync();
+                Session["ProductsList"] = null;
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryID = new SelectList(db.Categories, "Id", "Name", product.CategoryID);
@@ -179,6 +184,67 @@ namespace SahPolymer.Controllers
             }
         }
 
+
+        #region Image upload,list and delete region
+
+
+
+        public ActionResult GetProductImages(int ProductID)
+        {
+            try
+            {
+                var _ProductImages = db.ProductImages.Where(x => x.ProductID == ProductID).ToList();
+
+                return Json(new { Success = true, ex = "", data = _ProductImages.Select(x => new { x.Id, x.ImagePath }) }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { Success = false, ex = ex.InnerException.Message.ToString(), data = "" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult UploadFiles()
+        {
+            try
+            {
+
+                HttpFileCollectionBase files = Request.Files;
+                string ID = Request["ID"];
+                int _ID = -1;
+                int.TryParse(ID, out _ID);
+                if (_ID != -1) { UploadImages(files, "ProductImages", 2, _ID); }
+
+
+                return Json(new { Success = true, ex = "", data = "" });
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { Success = false, ex = ex.InnerException.Message.ToString(), data = "" });
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult DeleteImage(int id)
+        {
+            try
+            {
+
+
+                DeleteImagesByType(2, id);
+                return Json(new { Success = true, ex = "", data = "done" });
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { Success = false, ex = ex.InnerException.Message.ToString(), data = "done" });
+            }
+        }
+        #endregion
         protected override void Dispose(bool disposing)
         {
             if (disposing)

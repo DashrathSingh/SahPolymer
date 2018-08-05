@@ -190,70 +190,11 @@ namespace WorkWellPipe.Controllers
             return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data.Select(x => new { x.Id, x.Sort, x.Description, x.Title, x.ServiceDescription, x.CreatedDate, x.UpdatedDate }) }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult ServiceImages(int id)
-        {
-
-            return View();
-
-        }
-        [HttpPost]
-        public ActionResult PostServiceImages(List<ImageViewModel> Images)
-        {
-            try
-            {
-                string path = "";
-                foreach (var item in Images)
-                {
-                    var _serviceImage = new ServiceImages();
-                    if (item.ImageBytes != null)
-                    {
-                        if (string.IsNullOrEmpty(item.ImagePath))
-                        {
-
-                            var _fileName = Guid.NewGuid().ToString() + ".jpg";
-                            path = System.Web.Hosting.HostingEnvironment.MapPath("~/Images/Services/" + _fileName);
-
-                            _serviceImage.ImagePath = _fileName;
-                        }
-                        else
-                        {
-
-                            path = System.Web.Hosting.HostingEnvironment.MapPath("~/Images/Services/" + _serviceImage.ImagePath);
-                        }
-                        byte[] image = item.ImageBytes;
-                        MemoryStream ms = new MemoryStream(image);
-
-                        Image i = Image.FromStream(ms);
-                        i.Save(path);
-                        _serviceImage.ServiceID = item.ImageForeignID;
-                        _serviceImage.ImagePath = _serviceImage.ImagePath;
-                    }
-                    if (item.ImageID != 0)
-                    {
-                        var _serviceObj = db.ServiceImages.Where(x => x.Id == item.ImageID).FirstOrDefault();
-                        _serviceObj.ImagePath = _serviceImage.ImagePath;
-
-                    }
-                    else
-                    {
-                        db.ServiceImages.Add(_serviceImage);
-
-                    }
-                    db.SaveChanges();
-
-                }
-
-                return Json(new { Success = true, ex = "", data = "" });
-
-            }
-            catch (Exception ex)
-            {
-
-                return Json(new { Success = false, ex = ex.InnerException.Message.ToString(), data = "" });
-            }
 
 
-        }
+        #region Image upload,list and delete region
+
+
 
         public ActionResult GetServiceImages(int ServiceID)
         {
@@ -261,7 +202,7 @@ namespace WorkWellPipe.Controllers
             {
                 var _ServiceImages = db.ServiceImages.Where(x => x.ServiceID == ServiceID).ToList();
 
-                return Json(new { Success = true, ex = "", data = _ServiceImages.Select(x => new { x.Id, x.ImagePath }) },JsonRequestBehavior.AllowGet);
+                return Json(new { Success = true, ex = "", data = _ServiceImages.Select(x => new { x.Id, x.ImagePath }) }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
@@ -293,5 +234,24 @@ namespace WorkWellPipe.Controllers
             }
 
         }
+
+        [HttpPost]
+        public ActionResult DeleteImage(int id)
+        {
+            try
+            {
+
+
+                DeleteImagesByType(1, id);
+                return Json(new { Success = true, ex = "", data = "done" });
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { Success = false, ex = ex.InnerException.Message.ToString(), data = "done" });
+            }
+        }
+        #endregion
+
     }
 }

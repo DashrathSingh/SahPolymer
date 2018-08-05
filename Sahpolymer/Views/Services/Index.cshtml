@@ -72,7 +72,27 @@
         </div>
     </div>
 
+    <div id="myModalImages" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Service Images</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="imgList">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 
@@ -83,9 +103,9 @@
 @section scripts{
     <script>
 
-
+        var _ServiceImagePath = "@Url.Content("~/ServiceImages/")";
         var _datatable = "";
-
+        var _TempServiceID = "";
         $(document).ready(function () {
             _datatable = $("#myTable").DataTable({
                 "processing": true, // for show progress bar
@@ -122,10 +142,11 @@
                         "orderable": false,
                         "mRender": function (data, type, row) {
                             var _c = '<a href="/Services/Edit?id=' + row.Id + '" class="btn btn-primary"  title="" data-original-title="Edit"><i class="fa fa-pencil"  align="center"></i></a>  '
-                            var _a = '<a href="#" class="btn btn-primary" onclick="OpenModal(' + row.Id + ')"  title="" data-original-title="Edit"><i class="fa fa-upload"  align="center"></i></a>'
+                            var _a = '<a href="#" class="btn btn-primary" onclick="OpenModal(' + row.Id + ')"  title="" ><i class="fa fa-upload"  align="center"></i></a>'
+                            var _b = '<a href="#" class="btn btn-primary" onclick="OpenImageModal(' + row.Id + ')"  title=""><i class="fa fa-picture-o"  align="center"></i></a>'
                             var _d = '<a onclick="DeleteService(' + row.Id + ')" href="#"  class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-trash-o"  align="center"></i> </a>  '
 
-                            return _c + _a + _d;
+                            return _c + _a + _b + _d;
 
                         }
                     },
@@ -173,10 +194,54 @@
 
     <script>
         function OpenModal(ID) {
-            alert(ID);
             $("#ID").val(ID);
             $("#fileInput").val("");
             $("#myModal").modal("show");
+        }
+
+        function OpenImageModal(ID) {
+            _TempServiceID = ID;
+            $.get("/Services/GetServiceImages?ServiceID=" + ID, function (data) {
+                if (data.Success == true) {
+                    $("#imgList").html("");
+                    var _ul = "<ul class='Listimages'>";
+                    for (var i = 0; i < data.data.length; i++) {
+                        var _path = data.data[i].ImagePath.replace("~", "..");
+                        var _deleteBtn = "<a onclick='DeleteImage(" + data.data[i].Id + ")' class='btn btn-danger deleteimage'> <i class='fa fa-trash-o'></i> Delete</a>";
+                        var _img = "<img class='img-responsive img-thumbnail' src='" + _path + "'/><br/>" + _deleteBtn;
+                        var _li = "<li>" + _img + "</li>";
+                        _ul += _li;
+
+                    }
+                    $("#imgList").append(_ul);
+
+                   
+                }
+                else {
+                    alert(data.ex);
+                }
+                $("#myModalImages").modal("show");
+            });
+        }
+
+        function DeleteImage(ID) {
+            $.ajax({
+                url: "/Services/DeleteImage",
+                data: JSON.stringify({ id: ID }),
+                type: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.Success === true) {
+                        OpenImageModal(_TempServiceID);
+                    } else {
+                        alert("error occurred during operation." + result.ex);
+                    }
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
         }
         $(document).ready(function () {
             $("#fileButton").click(function () {
@@ -201,6 +266,7 @@
                     success: function (result, status, xhr) {
                         $("#fileButton").prop('disabled', false);
                         $("#fileInput").val("");
+                        $("#myModal").modal("hide");
                     },
                     error: function (xhr, status, error) {
                         alert(status);

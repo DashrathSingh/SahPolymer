@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -Sah polymer</title>
+    <title>@ViewBag.Title -Sah polymers</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="@Url.Content("~/Content/dataTables.bootstrap.min.css")" rel="stylesheet" />
@@ -21,20 +21,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Sah polymers", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Category", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Products", "Index", "Products")</li>
                     <li>@Html.ActionLink("Services", "Index", "Services")</li>
 
                     <li>@Html.ActionLink("Brands", "Index", "Brands")</li>
                     <li>@Html.ActionLink("Content Pages", "Index", "ContentPages")</li>
-                    <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                    <li>@Html.ActionLink("Gallery", "Index", "Albums")</li>
 
-                    <li>@Html.ActionLink("Main Slider", "Index", "Slider")</li>
+                    <li>@Html.ActionLink("Main Slider", "Index", "SliderImages")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -44,7 +43,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Sah polymers</p>
         </footer>
     </div>
 

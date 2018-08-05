@@ -47,6 +47,52 @@
             </table>
 
         </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Upload Brand Images</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" id="myimageform" method="post">
+                            <input type="file" id="fileInput" multiple />
+                            <input type="hidden" name="ID" id="ID" value="" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="fileButton">Upload Files</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModalImages" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Brand Images</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="imgList">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 
@@ -63,7 +109,7 @@
 
 
         var _datatable = "";
-
+        var _TempBrandID = "";
         $(document).ready(function () {
             _datatable = $("#myTable").DataTable({
                 "processing": true, // for show progress bar
@@ -100,9 +146,11 @@
                         "orderable": false,
                         "mRender": function (data, type, row) {
                             var _c = '<a href="/Brands/Edit?id=' + row.Id + '" class="btn btn-primary"  title="" data-original-title="Edit"><i class="fa fa-pencil"  align="center"></i></a>  '
+                            var _a = '<a href="#" class="btn btn-primary" onclick="OpenModal(' + row.Id + ')"  title="" ><i class="fa fa-upload"  align="center"></i></a>'
+                            var _b = '<a href="#" class="btn btn-primary" onclick="OpenImageModal(' + row.Id + ')"  title=""><i class="fa fa-picture-o"  align="center"></i></a>'
                             var _d = '<a onclick="DeleteBrand(' + row.Id + ')" href="#"  class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-trash-o"  align="center"></i> </a>  '
 
-                            return _c + _d;
+                            return _c + _a + _b +_d;
 
                         }
                     },
@@ -120,23 +168,23 @@
             if (_x) {
 
 
-                    $.ajax({
-                        url: "/Brands/Delete",
-                        data: JSON.stringify({ id: Id }),
-                        type: 'POST',
-                        contentType: 'application/json',
-                        dataType: 'json',
-                        success: function (result) {
-                            if (result.Success === true) {
-                                _datatable.clear().draw();
-                            } else {
-                                alert("error occurred during operation." + result.ex);
-                            }
-                        },
-                        error: function (req, status, error) {
-                            alert(error);
+                $.ajax({
+                    url: "/Brands/Delete",
+                    data: JSON.stringify({ id: Id }),
+                    type: 'POST',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.Success === true) {
+                            _datatable.clear().draw();
+                        } else {
+                            alert("error occurred during operation." + result.ex);
                         }
-                    });
+                    },
+                    error: function (req, status, error) {
+                        alert(error);
+                    }
+                });
 
 
 
@@ -146,5 +194,92 @@
 
         }
 
+    </script>
+
+    <script>
+        function OpenModal(ID) {
+            $("#ID").val(ID);
+            $("#fileInput").val("");
+            $("#myModal").modal("show");
+        }
+
+        function OpenImageModal(ID) {
+            _TempBrandID = ID;
+            $.get("/Brands/GetBrandImages?BrandID=" + ID, function (data) {
+                if (data.Success == true) {
+                    $("#imgList").html("");
+                    var _ul = "<ul class='Listimages'>";
+                    for (var i = 0; i < data.data.length; i++) {
+                        var _path = data.data[i].ImagePath.replace("~", "..");
+                        var _deleteBtn = "<a onclick='DeleteImage(" + data.data[i].Id + ")' class='btn btn-danger deleteimage'> <i class='fa fa-trash-o'></i> Delete</a>";
+                        var _img = "<img class='img-responsive img-thumbnail' src='" + _path + "'/><br/>" + _deleteBtn;
+                        var _li = "<li>" + _img + "</li>";
+                        _ul += _li;
+
+                    }
+                    $("#imgList").append(_ul);
+
+
+                }
+                else {
+                    alert(data.ex);
+                }
+                $("#myModalImages").modal("show");
+            });
+        }
+
+        function DeleteImage(ID) {
+            $.ajax({
+                url: "/Brands/DeleteImage",
+                data: JSON.stringify({ id: ID }),
+                type: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.Success === true) {
+                        OpenImageModal(_TempBrandID);
+                    } else {
+                        alert("error occurred during operation." + result.ex);
+                    }
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+        }
+        $(document).ready(function () {
+            $("#fileButton").click(function () {
+                $("#fileButton").prop('disabled', true);
+                var form = $('#myimageform')[0]; // You need to use standard javascript object here
+                var fileData = new FormData(form);
+                var files = $("#fileInput").get(0).files;
+
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append("fileInput", files[i]);
+                }
+
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Brands/UploadFiles",
+                    dataType: "json",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: fileData,
+                    success: function (result, status, xhr) {
+                        $("#fileButton").prop('disabled', false);
+                        $("#fileInput").val("");
+                        $("#myModal").modal("hide");
+                    },
+                    error: function (xhr, status, error) {
+                        alert(status);
+                    }
+                });
+            });
+
+
+
+        });
     </script>
 }

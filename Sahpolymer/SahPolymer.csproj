@@ -187,12 +187,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\LoadAllRequiredData.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlbumsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SliderImagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +237,24 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Front_Content\CSS\financity-style-custom.css" />
+    <Content Include="Front_Content\CSS\page-builder.css" />
+    <Content Include="Front_Content\CSS\settings.css" />
+    <Content Include="Front_Content\CSS\style-core.css" />
+    <Content Include="Front_Content\CSS\style.css" />
+    <Content Include="Front_Content\JS\effect.min.js" />
+    <Content Include="Front_Content\JS\jquery-migrate.min.js" />
+    <Content Include="Front_Content\JS\jquery.js" />
+    <Content Include="Front_Content\JS\jquery.themepunch.revolution.min.js" />
+    <Content Include="Front_Content\JS\jquery.themepunch.tools.min.js" />
+    <Content Include="Front_Content\JS\page-builder.js" />
+    <Content Include="Front_Content\JS\revolution.extension.kenburn.min.js" />
+    <Content Include="Front_Content\JS\revolution.extension.layeranimation.min.js" />
+    <Content Include="Front_Content\JS\revolution.extension.navigation.min.js" />
+    <Content Include="Front_Content\JS\revolution.extension.parallax.min.js" />
+    <Content Include="Front_Content\JS\revolution.extension.slideanims.min.js" />
+    <Content Include="Front_Content\JS\script-core.js" />
+    <Content Include="Front_Content\JS\script.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -319,6 +340,21 @@
     <Content Include="Views\ContentPages\Details.cshtml" />
     <Content Include="Views\ContentPages\Edit.cshtml" />
     <Content Include="Views\ContentPages\Index.cshtml" />
+    <Content Include="Views\Albums\Create.cshtml" />
+    <Content Include="Views\Albums\Delete.cshtml" />
+    <Content Include="Views\Albums\Details.cshtml" />
+    <Content Include="Views\Albums\Edit.cshtml" />
+    <Content Include="Views\Albums\Index.cshtml" />
+    <Content Include="Views\Home\Petrochemical.cshtml" />
+    <Content Include="Views\Shared\Front_Layout.cshtml" />
+    <Content Include="Views\SliderImages\Create.cshtml" />
+    <Content Include="Views\SliderImages\Delete.cshtml" />
+    <Content Include="Views\SliderImages\Details.cshtml" />
+    <Content Include="Views\SliderImages\Edit.cshtml" />
+    <Content Include="Views\SliderImages\Index.cshtml" />
+    <Content Include="Views\Home\ContentPages.cshtml" />
+    <Content Include="Views\Home\InfraStructures.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
